@@ -1,10 +1,11 @@
 #ifndef MEMORY_H
 #define MEMORY_H
 
-class Memory {
+class Memory
+{
 public:
     // Constructor
-    Memory(int memorySize,unsigned char* memoryPointer);
+    Memory(int memorySize, unsigned char *memoryPointer);
 
     // Methods
     // unsigned char* getByte(unsigned long address);
@@ -15,7 +16,7 @@ public:
 
 private:
     int memorySize;
-    unsigned char* memoryPointer;
+    unsigned char *memoryPointer;
 };
 
-#endif 
+#endif
