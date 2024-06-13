@@ -26,6 +26,7 @@ public:
     void updateTimestamp();
     void display();
     void setTag(unsigned long tag);
+    unsigned long getTag();
 };
 
 #endif
