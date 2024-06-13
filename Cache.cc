@@ -9,25 +9,27 @@ Cache::Cache(Memory *memoryPointer, int cacheSize, int blockSize, int setAssocia
     this->blockSize = blockSize;
     this->setAssociativity = setAssociativity;
 
-    int amountOfSets = cacheSize / setAssociativity;
-    int *sets[amountOfSets];
+    this->amountOfSets = cacheSize / (blockSize * setAssociativity);
+    this->sets[amountOfSets];
 }
 
 void Cache::write(unsigned long address)
 {
 }
-void Cache::read(unsigned long address)
+unsigned char Cache::read(unsigned long address)
 {
 }
 void Cache::display()
 {
-    printf("CACHE: /n");
+    printf("CACHE: \n");
     for (int i = 0; i < amountOfSets; i++)
     {
-        printf("Set: %d/n  Blocks/n", i);
+        printf("Set: %d\n  Blocks\n", i);
         for (int j = 0; j < setAssociativity; j++)
         {
-            printf("%d:/n", j);
+            // Set->display(); // Sets display will call the Blocks display
+            printf("%d:\n", j);
         }
     }
 }
+

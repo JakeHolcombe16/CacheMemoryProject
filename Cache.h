@@ -9,14 +9,16 @@ private:
     int cacheSize;
     int blockSize;
     int setAssociativity;
+    int amountOfSets;
+    int **sets;
 
 public:
     // constructor
-    Cache(Memory *memoryPointer, int cacheSize, int blockSize; int setAssociativity);
+    Cache(Memory *memoryPointer, int cacheSize, int blockSize, int setAssociativity);
 
     // methods
     void write(unsigned long address);
-    void read(unsigned long address);
+    unsigned char read(unsigned long address);
     void display();
 };
 
