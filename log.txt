@@ -1,3 +1,12 @@
+Jake Holcombe and Tyler Grimes
+
+6 of our tests are not working. It's not calculating misses and hits on some of the later
+tests but all the tests leading up to read1 are correct. We think that this is due to an
+error in the set class/LRU but after many hours debugging we could not figure out the
+problem
+
+OUTPUT:
+
 Cache Simulator Nway Detialed Test
 020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
 1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
