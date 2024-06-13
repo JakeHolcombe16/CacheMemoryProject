@@ -1,23 +1,24 @@
 #ifndef ADDRESSDECODER_H
 #define ADDRESSDECODER_H
 
-AddressDecoder{
-    private:
-    unsigned long address;
-    int tagBits;
+struct AddressInfo
+{
+    unsigned long tag;
+    unsigned long setIndex;
+    unsigned long blockOffset;
+};
+
+class AddressDecoder
+{
+private:
+    int numSets;
+    int blockSize;
     int setIndexBits;
     int blockOffsetBits;
 
-    public:
-    AddressDecoder(unsigned long address,int tagBits, int setIndexBits, int blockOffsetBits);
-    int getTag();
-    int getSetIndex();
-    int getBlockOffset();
-    int addressOfBlock();
+public:
+    AddressDecoder(int numSets, int blockSize);
+    AddressInfo decode(unsigned long address);
 };
 
 #endif
-
-
-
-

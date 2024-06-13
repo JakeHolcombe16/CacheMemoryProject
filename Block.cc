@@ -1,5 +1,7 @@
 #include "Block.h"
 #include <cstring> // For memcpy
+#include <stdio.h>
+#include <stdbool.h>
 
 Block::Block(int blockSize, unsigned char *memoryPointer)
 {
@@ -7,11 +9,16 @@ Block::Block(int blockSize, unsigned char *memoryPointer)
     this->memoryPointer = memoryPointer;
     isValid = false;
     isDirty = false;
+    this->tag = 0;
 
     byteData = new unsigned char[blockSize];
     updateTimestamp();
 }
 
+void Block::setTag(unsigned long tag)
+{
+    this->tag = tag;
+}
 void Block::read(unsigned long blockOffset, unsigned char &data)
 {
     if (blockOffset < blockSize)
@@ -59,4 +66,10 @@ void Block::updateTimestamp()
 
 void Block::display()
 {
+    printf("Valid: %d  Tag: %d  Dirty: %d  Timestamp: %lu", isValid, isDirty, timestamp);
+    for (int i = 0; i < blockSize; i++)
+    {
+        printf("%02X  ", byteData[i]);
+    }
+    printf("/n");
 }

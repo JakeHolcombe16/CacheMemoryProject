@@ -9,7 +9,7 @@ private:
     int blockSize;
     unsigned char *memoryPointer;
     unsigned char *byteData;
-    int tag;
+    unsigned long tag;
     bool isValid;
     bool isDirty;
 
@@ -24,6 +24,7 @@ public:
     void saveToMemory();
     void updateTimestamp();
     void display();
+    void setTag(unsigned long tag);
 };
 
 #endif
