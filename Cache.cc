@@ -13,7 +13,7 @@ Cache::Cache(Memory *memoryPointer, int cacheSize, int blockSize, int setAssocia
     this->sets[amountOfSets];
 }
 
-void Cache::write(unsigned long address)
+void Cache::write(unsigned long address, unsigned char data)
 {
 }
 unsigned char Cache::read(unsigned long address)

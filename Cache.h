@@ -17,7 +17,7 @@ public:
     Cache(Memory *memoryPointer, int cacheSize, int blockSize, int setAssociativity);
 
     // methods
-    void write(unsigned long address);
+    void write(unsigned long address, unsigned char data);
     unsigned char read(unsigned long address);
     void display();
 };
