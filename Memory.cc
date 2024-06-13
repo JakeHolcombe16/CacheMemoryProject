@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "Memory.h"
 
-Memory::Memory(int memorySize, unsigned char *memoryPointer)
+Memory::Memory(int memorySize)
 {
     this->memorySize = memorySize;
     this->memoryPointer = memoryPointer;
@@ -35,7 +35,7 @@ int Memory::getMemorySize()
     return memorySize;
 }
 
-void Memory::displayMemory()
+void Memory::display()
 {
     for (int i = 0; i < memorySize; i++)
     {

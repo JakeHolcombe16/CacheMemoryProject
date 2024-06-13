@@ -1,27 +1,32 @@
 #include "PerformanceCounter.h"
 #include <stdio.h>
-PerformanceCounter::PerformanceCounter() {
+PerformanceCounter::PerformanceCounter()
+{
     this->hits = 0;
     this->misses = 0;
     this->accesses = 0;
     this->writebacks = 0;
 }
 
-void PerformanceCounter::incrementHits() {
+void PerformanceCounter::incrementHits()
+{
     this->hits++;
     this->accesses++;
 }
 
-void PerformanceCounter::incrementMisses() {
+void PerformanceCounter::incrementMisses()
+{
     this->misses++;
     this->accesses++;
 }
 
-void PerformanceCounter::incrementWritebacks() {
+void PerformanceCounter::incrementWritebacks()
+{
     this->writebacks++;
 }
 
-void PerformanceCounter::display() {
+void PerformanceCounter::display()
+{
     printf("PERFORMANCE COUNTER: \n");
     printf("Hits: %d\n", this->hits);
     printf("Misses: %d\n", this->misses);

@@ -1,12 +1,14 @@
 #ifndef PERFORMANCECOUNTER_H
 #define PERFORMANCECOUNTER_H
 
-class PerformanceCounter {
+class PerformanceCounter
+{
 private:
     int hits;
     int misses;
     int accesses;
     int writebacks;
+
 public:
     PerformanceCounter();
     void incrementHits();
@@ -17,7 +19,5 @@ public:
     int getMisses();
     int getWritbacks();
 };
-
-
 
 #endif

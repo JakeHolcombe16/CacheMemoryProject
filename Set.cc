@@ -3,7 +3,7 @@
 #include "Block.h"
 #include "PerformanceCounter.h"
 
-Set::Set(int numBlocks, int blockSize, Memory *memoryPointer, PerformanceCounter* p)
+Set::Set(int numBlocks, int blockSize, Memory *memoryPointer, PerformanceCounter *p)
 {
     this->numBlocks = numBlocks;
     this->blockSize = blockSize;

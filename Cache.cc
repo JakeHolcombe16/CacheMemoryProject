@@ -10,7 +10,7 @@ Cache::Cache(Memory *memoryPointer, int cacheSize, int blockSize, int setAssocia
     this->setAssociativity = setAssociativity;
     performanceCounter = new PerformanceCounter();
     amountOfSets = cacheSize / (blockSize * setAssociativity);
-    sets = new Set*[amountOfSets];
+    sets = new Set *[amountOfSets];
     for (int i = 0; i < amountOfSets; i++)
     {
         sets[i] = new Set(setAssociativity, blockSize, memoryPointer, performanceCounter);
@@ -22,14 +22,14 @@ void Cache::write(unsigned long address, unsigned char data)
 {
     AddressInfo in = addDecode->decode(address);
 
-    Set* set = sets[in.setIndex];
-    set->write(in.tag, in.blockOffset,memoryPointer,data);
+    Set *set = sets[in.setIndex];
+    set->write(in.tag, in.blockOffset, memoryPointer, data);
 }
 unsigned char Cache::read(unsigned long address)
 {
     AddressInfo in = addDecode->decode(address);
 
-    Set* set = sets[in.setIndex];
+    Set *set = sets[in.setIndex];
     return set->read(in.tag, in.blockOffset, memoryPointer);
 }
 void Cache::display()
