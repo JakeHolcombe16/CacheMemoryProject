@@ -1,12 +1,14 @@
 #include "Set.h"
 #include <stdio.h>
 #include "Block.h"
+#include "PerformanceCounter.h"
 
-Set::Set(int numBlocks, int blockSize, Memory *memoryPointer)
+Set::Set(int numBlocks, int blockSize, Memory *memoryPointer, PerformanceCounter p)
 {
     this->numBlocks = numBlocks;
     this->blockSize = blockSize;
     this->memoryPointer = memoryPointer;
+    this->p = p;
 
     setBlocks = new Block *[blockSize];
     for (int i = 0; i < this->numBlocks; i++)
@@ -54,6 +56,7 @@ unsigned char Set::read(unsigned long tag, unsigned long blockOffset, Memory *me
     if (block)
     {
         updateLRU(block);
+        p->incrementHits();
         return block->read(blockOffset);
     }
     else

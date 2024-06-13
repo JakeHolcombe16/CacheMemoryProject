@@ -3,6 +3,7 @@
 #include "AddressDecoder.h"
 #include "memory.h"
 #include "Block.h"
+#include "PerformanceCounter.h"
 
 class Set
 {
@@ -12,9 +13,10 @@ private:
     Block **setBlocks;
 
     Memory *memoryPointer;
+    PerformanceCounter p;
 
 public:
-    Set(int numBlocks, int blockSize, Memory *memoryPointer);
+    Set(int numBlocks, int blockSize, Memory *memoryPointer, PerformanceCounter p);
     unsigned char read(unsigned long tag, unsigned long blockOffset, Memory *memory);
     void write(unsigned long tag, unsigned long blockOffset, Memory *memory, unsigned char data);
     bool isLoaded(unsigned long address);
