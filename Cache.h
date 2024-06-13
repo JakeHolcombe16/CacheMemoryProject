@@ -1,6 +1,9 @@
 #ifndef CACHE_H
 #define CACHE_H
 #include "Memory.h"
+#include "Set.h"
+#include "PerformanceCounter.h"
+#include "AddressDecoder.h"
 
 class Cache
 {
@@ -10,7 +13,9 @@ private:
     int blockSize;
     int setAssociativity;
     int amountOfSets;
-    int **sets;
+    Set **sets;
+    PerformanceCounter *performanceCounter;
+    AddressDecoder *addDecode;
 
 public:
     // constructor
