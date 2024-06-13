@@ -19,14 +19,17 @@ private:
 
 public:
     Block(int blockSize, Memory *memoryPointer);
-    void read(unsigned long blockOffset, unsigned char &data);
+    unsigned char read(unsigned long blockOffset);
     void write(unsigned long blockOffset, unsigned char data);
-    void loadFromMemory();
-    void saveToMemory();
+    void loadFromMemory(unsigned long address);
+    void saveToMemory(unsigned long address);
     void updateTimestamp();
     void display();
     void setTag(unsigned long tag);
     unsigned long getTag();
+    bool isBlockValid();
+    bool isBlockDirty();
+    long getTimestamp();
 };
 
 #endif

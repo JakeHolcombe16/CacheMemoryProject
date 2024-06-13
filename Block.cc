@@ -11,6 +11,7 @@ Block::Block(int blockSize, Memory *memoryPointer)
     isValid = false;
     isDirty = false;
     this->tag = 0;
+    this->timestamp = 0;
 
     byteData = new unsigned char[blockSize];
     updateTimestamp();
@@ -25,13 +26,25 @@ unsigned long Block::getTag()
 {
     return this->tag;
 }
-void Block::read(unsigned long blockOffset, unsigned char &data)
+
+bool Block::isBlockValid()
 {
-    if (blockOffset < blockSize)
-    {
-        data = byteData[blockOffset];
-        updateTimestamp();
-    }
+    return this->isValid;
+}
+
+bool Block::isBlockDirty()
+{
+    return this->isDirty;
+}
+
+long Block::getTimestamp()
+{
+    return this->timestamp;
+}
+unsigned char Block::read(unsigned long blockOffset)
+{
+    updateTimestamp();
+    return byteData[blockOffset];
 }
 
 void Block::write(unsigned long blockOffset, unsigned char data)
@@ -44,25 +57,25 @@ void Block::write(unsigned long blockOffset, unsigned char data)
     }
 }
 
-void Block::loadFromMemory()
+void Block::loadFromMemory(unsigned long address)
 {
-    if (memoryPointer != nullptr)
+    for (int i = 0; i < blockSize; i++)
     {
-        std::memcpy(byteData, memoryPointer, blockSize);
-        isValid = true;
-        isDirty = false;
-        updateTimestamp();
+        byteData[i] = memoryPointer->getByte(address + i);
     }
+
+    isValid = true;
+    isDirty = false;
+    updateTimestamp();
 }
 
-void Block::saveToMemory()
+void Block::saveToMemory(unsigned long address)
 {
-    if (memoryPointer != nullptr && isDirty)
+    for (int i = 0; i < blockSize; i++)
     {
-        std::memcpy(memoryPointer, byteData, blockSize);
-        isDirty = false;
-        updateTimestamp();
+        memoryPointer->setByte(address + i, byteData[i]);
     }
+    isDirty = false;
 }
 
 void Block::updateTimestamp()
