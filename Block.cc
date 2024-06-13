@@ -2,8 +2,9 @@
 #include <cstring> // For memcpy
 #include <stdio.h>
 #include <stdbool.h>
+#include "Memory.h"
 
-Block::Block(int blockSize, unsigned char *memoryPointer)
+Block::Block(int blockSize, Memory *memoryPointer)
 {
     this->blockSize = blockSize;
     this->memoryPointer = memoryPointer;
@@ -18,6 +19,11 @@ Block::Block(int blockSize, unsigned char *memoryPointer)
 void Block::setTag(unsigned long tag)
 {
     this->tag = tag;
+}
+
+unsigned long Block::getTag()
+{
+    return this->tag;
 }
 void Block::read(unsigned long blockOffset, unsigned char &data)
 {

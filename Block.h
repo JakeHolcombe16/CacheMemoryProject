@@ -2,12 +2,13 @@
 #define BLOCK_H
 
 #include <chrono>
+#include "memory.h"
 
 class Block
 {
 private:
     int blockSize;
-    unsigned char *memoryPointer;
+    Memory *memoryPointer;
     unsigned char *byteData;
     unsigned long tag;
     bool isValid;
@@ -17,7 +18,7 @@ private:
     long timestamp;
 
 public:
-    Block(int blockSize, unsigned char *memoryPointer);
+    Block(int blockSize, Memory *memoryPointer);
     void read(unsigned long blockOffset, unsigned char &data);
     void write(unsigned long blockOffset, unsigned char data);
     void loadFromMemory();

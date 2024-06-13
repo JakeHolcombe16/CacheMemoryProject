@@ -24,11 +24,9 @@ void Cache::display()
     printf("CACHE: \n");
     for (int i = 0; i < amountOfSets; i++)
     {
-        printf("Set: %d\n  Blocks\n", i);
-        for (int j = 0; j < setAssociativity; j++)
-        {
-            // Set->display(); // Sets display will call the Blocks display
-            printf("%d:\n", j);
-        }
+        printf("Set %d\n", i);
+        int *currentSet;
+        currentSet = sets[i];
+        currentSet->display();
     }
 }
