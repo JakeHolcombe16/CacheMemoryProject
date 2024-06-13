@@ -2,12 +2,11 @@
 #include <stdio.h>
 #include "Block.h"
 
-Set::Set(int numBlocks, int blockSize, Memory *memoryPointer, AddressDecoder addressDecoder)
+Set::Set(int numBlocks, int blockSize, Memory *memoryPointer)
 {
     this->numBlocks = numBlocks;
     this->blockSize = blockSize;
     this->memoryPointer = memoryPointer;
-    this->addressDecoder = addressDecoder;
 
     setBlocks = new Block *[blockSize];
     for (int i = 0; i < this->numBlocks; i++)
@@ -16,12 +15,87 @@ Set::Set(int numBlocks, int blockSize, Memory *memoryPointer, AddressDecoder add
     }
 }
 
-void Set::read()
+Block *Set::findBlock(unsigned long tag)
 {
+    for (int i = 0; i < numBlocks; i++)
+    {
+        if (setBlocks[i]->getTag() == tag && setBlocks[i]->isBlockValid())
+        {
+            return setBlocks[i];
+        }
+    }
+
+    return nullptr;
 }
 
-void Set::write()
+Block *Set::LRUBlock()
 {
+    int lruIndex = 0;
+    for (int i = 1; i < numBlocks; i++)
+    {
+        if (setBlocks[i]->getTimestamp() < setBlocks[lruIndex]->getTimestamp())
+        {
+            lruIndex = i;
+        }
+    }
+
+    return setBlocks[lruIndex];
+}
+
+void updateLRU(Block *b)
+{
+    b->updateTimestamp();
+}
+
+unsigned char Set::read(unsigned long tag, unsigned long blockOffset, Memory *memory)
+{
+    Block *block = findBlock(tag);
+
+    if (block)
+    {
+        updateLRU(block);
+        return block->read(blockOffset);
+    }
+    else
+    {
+        block = LRUBlock();
+        if (block->isBlockDirty())
+        {
+            block->saveToMemory((block->getTag() << (blockSize + blockOffset)) | blockOffset);
+        }
+
+        loadAndSet(blockOffset, tag, block);
+
+        // read the value and return it
+        return block->read(blockOffset);
+    }
+}
+
+void Set::write(unsigned long tag, unsigned long blockOffset, Memory *memory, unsigned char data)
+{
+    Block *block = findBlock(tag);
+
+    if (block)
+    {
+        updateLRU(block);
+        block->write(blockOffset, data);
+    }
+    else
+    {
+        block = LRUBlock();
+        block->saveToMemory((block->getTag() << (blockSize + blockOffset)) | blockOffset);
+    }
+
+    loadAndSet(blockOffset, tag, block);
+
+    block->write(blockOffset, data);
+}
+
+void Set::loadAndSet(unsigned long blockOffset, unsigned long tag, Block *block)
+{
+    block->loadFromMemory((tag << (this->blockSize + blockOffset)) | blockOffset);
+    block->setTag(tag);
+    updateLRU(block);
 }
 
 void Set::display()
