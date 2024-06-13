@@ -1,0 +1,762 @@
+Cache Simulator Nway Detialed Test
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334861733
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862506
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334861733
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862506
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 0
+Misses: 0
+Accesses: 0
+Writebacks: 0
+Miss Rate: -nan%
+Writeback Rate: -nan%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 0
+Misses: 0
+Accesses: 0
+Writebacks: 0
+Miss Rate: -nan%
+Writeback Rate: -nan%
+-------------------------------------------------------------------
+READ 0
+0
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522335364897
+00  01  02  03
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862506
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522335364897
+00  01  02  03
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862506
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 0
+Misses: 1
+Accesses: 1
+Writebacks: 0
+Miss Rate: 100.00%
+Writeback Rate: 0.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 0
+Misses: 1
+Accesses: 1
+Writebacks: 0
+Miss Rate: 100.00%
+Writeback Rate: 0.00%
+-------------------------------------------------------------------
+READ 2
+2
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522335965017
+00  01  02  03
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862506
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522335965017
+00  01  02  03
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862506
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 1
+Accesses: 2
+Writebacks: 0
+Miss Rate: 50.00%
+Writeback Rate: 0.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 1
+Accesses: 2
+Writebacks: 0
+Miss Rate: 50.00%
+Writeback Rate: 0.00%
+-------------------------------------------------------------------
+READ 4
+16
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522335965017
+00  01  02  03
+
+1:
+Valid: 1  Tag: 1  Dirty: 0  Timestamp: 1718317522336552416
+10  11  12  13
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522335965017
+00  01  02  03
+
+1:
+Valid: 1  Tag: 1  Dirty: 0  Timestamp: 1718317522336552416
+10  11  12  13
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 2
+Accesses: 3
+Writebacks: 0
+Miss Rate: 66.67%
+Writeback Rate: 0.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 2
+Accesses: 3
+Writebacks: 0
+Miss Rate: 66.67%
+Writeback Rate: 0.00%
+-------------------------------------------------------------------
+READ 10
+0
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 2  Dirty: 0  Timestamp: 1718317522337152966
+00  00  00  00
+
+1:
+Valid: 1  Tag: 1  Dirty: 0  Timestamp: 1718317522336552416
+10  11  12  13
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 2  Dirty: 0  Timestamp: 1718317522337152966
+00  00  00  00
+
+1:
+Valid: 1  Tag: 1  Dirty: 0  Timestamp: 1718317522336552416
+10  11  12  13
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 3
+Accesses: 4
+Writebacks: 0
+Miss Rate: 75.00%
+Writeback Rate: 0.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 3
+Accesses: 4
+Writebacks: 0
+Miss Rate: 75.00%
+Writeback Rate: 0.00%
+-------------------------------------------------------------------
+READ 12
+192
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 2  Dirty: 0  Timestamp: 1718317522337152966
+00  00  00  00
+
+1:
+Valid: 1  Tag: 3  Dirty: 0  Timestamp: 1718317522337741680
+C0  F2  45  25
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 2  Dirty: 0  Timestamp: 1718317522337152966
+00  00  00  00
+
+1:
+Valid: 1  Tag: 3  Dirty: 0  Timestamp: 1718317522337741680
+C0  F2  45  25
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 4
+Accesses: 5
+Writebacks: 0
+Miss Rate: 80.00%
+Writeback Rate: 0.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 4
+Accesses: 5
+Writebacks: 0
+Miss Rate: 80.00%
+Writeback Rate: 0.00%
+-------------------------------------------------------------------
+READ 1
+2
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522338355266
+01  02  03  04
+
+1:
+Valid: 1  Tag: 3  Dirty: 0  Timestamp: 1718317522337741680
+C0  F2  45  25
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522338355266
+01  02  03  04
+
+1:
+Valid: 1  Tag: 3  Dirty: 0  Timestamp: 1718317522337741680
+C0  F2  45  25
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 5
+Accesses: 6
+Writebacks: 0
+Miss Rate: 83.33%
+Writeback Rate: 0.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 5
+Accesses: 6
+Writebacks: 0
+Miss Rate: 83.33%
+Writeback Rate: 0.00%
+-------------------------------------------------------------------
+READ 16
+2
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522338355266
+01  02  03  04
+
+1:
+Valid: 1  Tag: 4  Dirty: 0  Timestamp: 1718317522338945247
+02  00  00  00
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 0  Dirty: 0  Timestamp: 1718317522338355266
+01  02  03  04
+
+1:
+Valid: 1  Tag: 4  Dirty: 0  Timestamp: 1718317522338945247
+02  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 6
+Accesses: 7
+Writebacks: 0
+Miss Rate: 85.71%
+Writeback Rate: 0.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 6
+Accesses: 7
+Writebacks: 0
+Miss Rate: 85.71%
+Writeback Rate: 0.00%
+-------------------------------------------------------------------
+WRITE 6
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 1  Dirty: 1  Timestamp: 1718317522339529612
+00  00  66  00
+
+1:
+Valid: 1  Tag: 4  Dirty: 0  Timestamp: 1718317522338945247
+02  00  00  00
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 1  Dirty: 1  Timestamp: 1718317522339529612
+00  00  66  00
+
+1:
+Valid: 1  Tag: 4  Dirty: 0  Timestamp: 1718317522338945247
+02  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 7
+Accesses: 8
+Writebacks: 0
+Miss Rate: 87.50%
+Writeback Rate: 0.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 7
+Accesses: 8
+Writebacks: 0
+Miss Rate: 87.50%
+Writeback Rate: 0.00%
+-------------------------------------------------------------------
+WRITE 21
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+1020  1120  1220  1320  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 1  Dirty: 1  Timestamp: 1718317522339529612
+00  00  66  00
+
+1:
+Valid: 1  Tag: 5  Dirty: 1  Timestamp: 1718317522340103037
+00  55  00  00
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 1  Dirty: 1  Timestamp: 1718317522339529612
+00  00  66  00
+
+1:
+Valid: 1  Tag: 5  Dirty: 1  Timestamp: 1718317522340103037
+00  55  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 8
+Accesses: 9
+Writebacks: 0
+Miss Rate: 88.89%
+Writeback Rate: 0.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 8
+Accesses: 9
+Writebacks: 0
+Miss Rate: 88.89%
+Writeback Rate: 0.00%
+-------------------------------------------------------------------
+READ 12
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+020  020  6620  020  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 3  Dirty: 0  Timestamp: 1718317522340677076
+C0  F2  45  25
+
+1:
+Valid: 1  Tag: 5  Dirty: 1  Timestamp: 1718317522340103037
+00  55  00  00
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 3  Dirty: 0  Timestamp: 1718317522340677076
+C0  F2  45  25
+
+1:
+Valid: 1  Tag: 5  Dirty: 1  Timestamp: 1718317522340103037
+00  55  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 9
+Accesses: 10
+Writebacks: 1
+Miss Rate: 90.00%
+Writeback Rate: 10.00%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 9
+Accesses: 10
+Writebacks: 1
+Miss Rate: 90.00%
+Writeback Rate: 10.00%
+-------------------------------------------------------------------
+WRITE 30
+020  120  220  320  420  520  620  720  820  920  a20  b20  c20  d20  e20  f20
+020  020  6620  020  1420  1520  1620  1720  1820  1920  1a20  1b20  1c20  1d20  1e20  1f20
+CACHE:
+Set: 0
+  Blocks
+Blocks
+0:
+Valid: 1  Tag: 3  Dirty: 0  Timestamp: 1718317522340677076
+C0  F2  45  25
+
+1:
+Valid: 1  Tag: 7  Dirty: 1  Timestamp: 1718317522341262451
+00  00  EE  00
+
+0:
+Blocks
+0:
+Valid: 1  Tag: 3  Dirty: 0  Timestamp: 1718317522340677076
+C0  F2  45  25
+
+1:
+Valid: 1  Tag: 7  Dirty: 1  Timestamp: 1718317522341262451
+00  00  EE  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 10
+Accesses: 11
+Writebacks: 2
+Miss Rate: 90.91%
+Writeback Rate: 18.18%
+Set: 1
+  Blocks
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+0:
+Blocks
+0:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862784
+00  00  00  00
+
+1:
+Valid: 0  Tag: 0  Dirty: 0  Timestamp: 1718317522334862917
+00  00  00  00
+
+1:
+PERFORMANCE COUNTER:
+Hits: 1
+Misses: 10
+Accesses: 11
+Writebacks: 2
+Miss Rate: 90.91%
+Writeback Rate: 18.18%

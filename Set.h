@@ -1,7 +1,7 @@
 #ifndef SET_H
 #define SET_H
 #include "AddressDecoder.h"
-#include "memory.h"
+#include "Memory.h"
 #include "Block.h"
 #include "PerformanceCounter.h"
 

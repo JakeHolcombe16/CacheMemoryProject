@@ -4,11 +4,11 @@
 Memory::Memory(int memorySize)
 {
     this->memorySize = memorySize;
-    this->memoryPointer = memoryPointer;
 
     // creating memory array
     // filling it with temp values
     memoryPointer = new unsigned char[memorySize];
+    // this->memoryPointer = memoryPointer;
     for (int i = 0; i < memorySize; i++)
     {
         // memoryArray[i] = i%255;
@@ -44,7 +44,7 @@ void Memory::display()
         // makes a new line every 16 bytes
         if ((i + 1) % 16 == 0)
         {
-            printf("/n");
+            printf("\n");
         }
     }
 }

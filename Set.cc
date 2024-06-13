@@ -10,7 +10,7 @@ Set::Set(int numBlocks, int blockSize, Memory *memoryPointer, PerformanceCounter
     this->memoryPointer = memoryPointer;
     this->p = p;
 
-    setBlocks = new Block *[blockSize];
+    setBlocks = new Block *[numBlocks];
     for (int i = 0; i < this->numBlocks; i++)
     {
         setBlocks[i] = new Block(this->blockSize, this->memoryPointer);
@@ -44,7 +44,7 @@ Block *Set::LRUBlock()
     return setBlocks[lruIndex];
 }
 
-void updateLRU(Block *b)
+void Set::updateLRU(Block *b)
 {
     b->updateTimestamp();
 }
@@ -60,10 +60,12 @@ unsigned char Set::read(unsigned long tag, unsigned long blockOffset, Memory *me
         return block->read(blockOffset);
     }
     else
-    {
+    {   
+        p->incrementMisses();
         block = LRUBlock();
         if (block->isBlockDirty())
         {
+            p->incrementWritebacks();
             block->saveToMemory((block->getTag() << (blockSize + blockOffset)) | blockOffset);
         }
 
@@ -81,33 +83,40 @@ void Set::write(unsigned long tag, unsigned long blockOffset, Memory *memory, un
     if (block)
     {
         updateLRU(block);
+        p->incrementHits();
         block->write(blockOffset, data);
     }
     else
     {
         block = LRUBlock();
-        block->saveToMemory((block->getTag() << (blockSize + blockOffset)) | blockOffset);
+        p->incrementMisses();
+        if (block->isBlockDirty())
+        {
+            p->incrementWritebacks();
+            block->saveToMemory((block->getTag() << (blockSize + blockOffset)) | blockOffset);
+        }
+        // loadAndSet(blockOffset, tag, block);
+        loadAndSet(blockOffset, tag, block);
+        block->write(blockOffset, data);
     }
 
-    loadAndSet(blockOffset, tag, block);
-
-    block->write(blockOffset, data);
+    
 }
 
 void Set::loadAndSet(unsigned long blockOffset, unsigned long tag, Block *block)
 {
-    block->loadFromMemory((tag << (this->blockSize + blockOffset)) | blockOffset);
+    block->loadFromMemory((tag << (blockSize + blockOffset)) | blockOffset);
     block->setTag(tag);
     updateLRU(block);
 }
 
 void Set::display()
 {
-    printf("Blocks /n");
+    printf("Blocks \n");
     for (int i = 0; i < numBlocks; i++)
     {
-        printf("%d:/n", i);
+        printf("%d:\n", i);
         setBlocks[i]->display();
-        printf("/n");
+        printf("\n");
     }
 }

@@ -1,6 +1,5 @@
 testCache: Simulation.o Memory.o Cache.o Set.o Block.o AddressDecoder.o PerformanceCounter.o
-	g++ Simulation.o Memory.o Cache.o Set.o Block.o AddressDecoder.o PerformanceCounter.o -o test 
-	./test
+	g++ Simulation.o Memory.o Cache.o Set.o Block.o AddressDecoder.o PerformanceCounter.o -o testCache
 
 Simulation.o: Simulation.cc Memory.h Cache.h
 	g++ Simulation.cc -c

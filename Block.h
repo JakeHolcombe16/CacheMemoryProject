@@ -2,7 +2,7 @@
 #define BLOCK_H
 
 #include <chrono>
-#include "memory.h"
+#include "Memory.h"
 
 class Block
 {

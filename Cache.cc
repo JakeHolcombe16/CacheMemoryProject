@@ -8,9 +8,9 @@ Cache::Cache(Memory *memoryPointer, int cacheSize, int blockSize, int setAssocia
     this->cacheSize = cacheSize;
     this->blockSize = blockSize;
     this->setAssociativity = setAssociativity;
-    performanceCounter = new PerformanceCounter();
     amountOfSets = cacheSize / (blockSize * setAssociativity);
     sets = new Set *[amountOfSets];
+    performanceCounter = new PerformanceCounter();
     for (int i = 0; i < amountOfSets; i++)
     {
         sets[i] = new Set(setAssociativity, blockSize, memoryPointer, performanceCounter);
@@ -43,5 +43,6 @@ void Cache::display()
             sets[i]->display(); // Sets display will call the Blocks display
             printf("%d:\n", j);
         }
+        performanceCounter->display();
     }
 }

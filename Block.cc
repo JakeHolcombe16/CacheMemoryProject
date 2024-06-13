@@ -85,10 +85,21 @@ void Block::updateTimestamp()
 
 void Block::display()
 {
-    printf("Valid: %d  Tag: %d  Dirty: %d  Timestamp: %lu", isValid, isDirty, timestamp);
+    if(isValid) {
+        printf("Valid: 1  Tag: %ld",tag);
+    } else {
+        printf("Valid: 0  Tag: %ld",tag);
+    }
+    if(isDirty) {
+        printf("  Dirty: 1");
+    } else {
+        printf("  Dirty: 0");
+    }
+    printf("  Timestamp: %ld  ", timestamp);
+    printf("\n");
     for (int i = 0; i < blockSize; i++)
     {
         printf("%02X  ", byteData[i]);
     }
-    printf("/n");
+    printf("\n");
 }
