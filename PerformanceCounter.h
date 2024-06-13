@@ -1,0 +1,4 @@
+#ifndef PERFORMANCECOUNTER_H
+#define PERFORMANCECOUNTER_H
+
+#endif
