@@ -13,10 +13,10 @@ private:
     Block **setBlocks;
 
     Memory *memoryPointer;
-    PerformanceCounter p;
+    PerformanceCounter *p;
 
 public:
-    Set(int numBlocks, int blockSize, Memory *memoryPointer, PerformanceCounter p);
+    Set(int numBlocks, int blockSize, Memory *memoryPointer, PerformanceCounter* p);
     unsigned char read(unsigned long tag, unsigned long blockOffset, Memory *memory);
     void write(unsigned long tag, unsigned long blockOffset, Memory *memory, unsigned char data);
     bool isLoaded(unsigned long address);

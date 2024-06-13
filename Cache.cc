@@ -23,7 +23,7 @@ void Cache::write(unsigned long address, unsigned char data)
     AddressInfo in = addDecode->decode(address);
 
     Set* set = sets[in.setIndex];
-    set->write(in.tag, in.blockOffset,data,memoryPointer);
+    set->write(in.tag, in.blockOffset,memoryPointer,data);
 }
 unsigned char Cache::read(unsigned long address)
 {
